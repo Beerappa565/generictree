@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.*;
 
-public class GFG {
+public class GFG
+{
  private class Node
 {
  int data;
@@ -11,10 +12,13 @@ public class GFG {
      this.data=this.data;
      this.children=new ArrayList<Node>();
  }
+}
  private Node root;
  private int size;
 
- public Node GFG()
+
+
+ GFG()
 {
     Scanner s=new Scanner(System.in);
     this.root=constructtree(s,null,0);
@@ -24,7 +28,7 @@ private Node constructtree(Scanner s,Node parent,int ithchild)
 {
     if(parent==null)
     {
-        System.out.println("enter teh data for the root node");
+        System.out.println("enter the data for the root node");
     }
     else
     {
@@ -42,7 +46,7 @@ private Node constructtree(Scanner s,Node parent,int ithchild)
     }
     return node;
 }
-public Node display()
+public void display()
 {
    display1(this.root);
 }
@@ -54,6 +58,7 @@ private void display1(Node node)
         str=str+node.children.get(i).data+" ";
     }
     str=str+" ,END";
+    System.out.println(str+" ");
     for(int i=0;i<node.children.size();i++)
     {
         this.display1(node.children.get(i));
@@ -65,5 +70,5 @@ public static void main (String[] args)
 GFG tree=new GFG();
     tree.display();
 }
-}
+
 }
